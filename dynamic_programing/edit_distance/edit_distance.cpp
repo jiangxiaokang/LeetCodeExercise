@@ -16,6 +16,7 @@ int EditDistance_Rec(char *src, char *des)
     int edIns = EditDistance_Rec(src, des + 1) + 1;
     int edDel = EditDistance_Rec(src + 1, des) + 1;
     int edRep = EditDistance_Rec(src + 1, des + 1) + 1;
+    
     return std::min(std::min(edIns, edDel), edRep);
 }
 
