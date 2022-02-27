@@ -25,7 +25,7 @@ struct RecordData{
     int distance = 0;
     bool bRecorded = false;
 };
-#define MAX_STRING_LEN 100
+#define MAX_STRING_LEN 1024
 RecordData table[MAX_STRING_LEN][MAX_STRING_LEN];
 int EditDistance_Table(char* src,char* dest,int i ,int j){
    if(table[i][j].bRecorded){
@@ -58,7 +58,7 @@ int EditDistance_Table(char* src,char* dest,int i ,int j){
 int EditDistance(const char* src,const char* dest){
     int len_src = strlen(src);
     int len_dest = strlen(dest);
-    int d[len_src][len_dest] /*= {0}*/;//error不能声明的同时初始化
+    int d[MAX_STRING_LEN][MAX_STRING_LEN] = {0xffff} ;
     int i ,j;
     for(i = 0;i<=len_src;++i){ 
         d[i][0]= i;
@@ -66,16 +66,15 @@ int EditDistance(const char* src,const char* dest){
     for(i=0;i<=len_dest;++i){
         d[0][i] = i;
     }
-    for(i=1;i<=len_src;++i)
-        for(j =1;j<=len_dest;++j){
-            if(src[i-1] == dest[j-1]){
-                d[i][j] = d[i-1][j-1];
-            }
-            else{
-                int edIns = d[i][j-1] + 1;
-                int edDel = d[i-1][j] + 1;
-                int edRep = d[i-1][j-1] + 1;
-                d[i][j] = std::min(std::min(edIns,edDel),edRep);
+    for(i=1;i<=len_src;++i) {
+        for (j = 1; j <= len_dest; ++j) {
+            if (src[i - 1] == dest[j - 1]) {
+                d[i][j] = d[i - 1][j - 1];
+            } else {
+                int edIns = d[i][j - 1] + 1;
+                int edDel = d[i - 1][j] + 1;
+                int edRep = d[i - 1][j - 1] + 1;
+                d[i][j] = std::min(std::min(edIns, edDel), edRep);
             }
         }
     }
@@ -85,8 +84,8 @@ int EditDistance(const char* src,const char* dest){
 int main(){
     char src[] = "SNOWY";
     char des[] = "SUNNY";
-    std::cout<<EditDistance_Rec(src,des)<<std::endl;
-    std::cout<<EditDistance_Table(src,des,0,0)<<std::endl;
+   // std::cout<<EditDistance_Rec(src,des)<<std::endl;
+   // std::cout<<EditDistance_Table(src,des,0,0)<<std::endl;
     std::cout<<EditDistance(src,des)<<std::endl;
     return 0;
 }
