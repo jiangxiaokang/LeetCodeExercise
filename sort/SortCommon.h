@@ -11,6 +11,12 @@ inline void PrintVec(const std::vector<int>& vec){
     std::cout<<std::endl; 
 }
 
+inline void SwapPos(std::vector<int>& vec, int i,int j){
+    vec[i] = vec[i]^vec[j];
+    vec[j] = vec[i]^vec[j];
+    vec[i] = vec[i]^vec[j];
+}
+
 class SortBase{
 public:
     SortBase() = default;

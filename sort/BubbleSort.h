@@ -10,9 +10,10 @@ protected:
         for(int endPos = vec.size() - 1; endPos>0;--endPos){
             for(int i = 0; i<endPos ; ++i){//0~endPos-1
                 if(vec[i]>vec[i+1]){
-                    int tmp = vec[i];
-                    vec[i] = vec[i+1];
-                    vec[i+1] = tmp;
+                    // int tmp = vec[i];
+                    // vec[i] = vec[i+1];
+                    // vec[i+1] = tmp;
+                    SwapPos(vec,i,i+1);
                 }
             }
         }
