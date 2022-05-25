@@ -2,6 +2,7 @@
 #include <vector>
 #include <iostream>
 #include "sort/BubbleSort.h"
+#include "sort/InsertSort.h"
 
 std::vector<int> GetRandomVec(int max_num,int count);
 
@@ -15,7 +16,12 @@ int main(){
         BubbleSort bs;
         std::vector<int> a = GetRandomVec(100,10);
         bs.DoSort(a);
-    }   
+    } 
+    {
+        InsertSort is;
+        std::vector<int> a = GetRandomVec(100,10);
+        is.DoSort(a);
+    }  
     return 0;
 }
 
