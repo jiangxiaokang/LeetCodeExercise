@@ -11,4 +11,7 @@ protected:
             }
         }
      }
+    virtual void PrintSortName(){
+        std::cout<< " Insert Sort" <<std::endl;
+    }
 };

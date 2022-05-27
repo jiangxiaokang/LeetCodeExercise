@@ -3,6 +3,7 @@
 #include <iostream>
 #include "sort/BubbleSort.h"
 #include "sort/InsertSort.h"
+#include "sort/MergeSort.h"
 #include "code/binary_search/findPeakElement.h"
 
 std::vector<int> GetRandomVec(int max_num,int count);
@@ -20,12 +21,23 @@ int main(){
     // } 
     // {
     //     InsertSort is;
-    //     std::vector<int> a = GetRandomVec(100,10);
+    //     std::vector<int> a = GetRandomVec(100,100);
     //     is.DoSort(a);
     // }  
-    FindPeakElementTest test;
-    std::vector<int> a= {1,2,3,4,3};
-    std::cout<<test.findPeakElement(a)<<std::endl;
+    {
+        std::vector<int> a = GetRandomVec(10000,10000);
+        MergeSort ms;
+        ms.DoSort(a);
+        InsertSort is;
+        is.DoSort(a);
+        BubbleSort bs;
+        bs.DoSort(a);
+        SelectSort ss;
+        ss.DoSort(a);
+    }
+    // FindPeakElementTest test;
+    // std::vector<int> a= {1,2,3,4,3};
+    // std::cout<<test.findPeakElement(a)<<std::endl;
     return 0;
 }
 

@@ -14,11 +14,15 @@ protected:
                     minIndex = j;
                 }
             }
-            if(minIndex != i){
-                int tmp = vec[i];
-                vec[i] = vec[minIndex];
-                vec[minIndex] = tmp;
-            }
+            SwapPos(vec,minIndex,i);
+            // if(minIndex != i){
+            //     int tmp = vec[i];
+            //     vec[i] = vec[minIndex];
+            //     vec[minIndex] = tmp;
+            // }
         }
+    }
+    virtual void PrintSortName(){
+        std::cout<< " Select Sort" <<std::endl;
     }
 };

@@ -18,5 +18,8 @@ protected:
             }
         }
     } 
+    virtual void PrintSortName(){
+        std::cout<< " Bubble Sort" <<std::endl;
+    }
 };
 
