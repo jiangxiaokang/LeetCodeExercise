@@ -1,5 +1,5 @@
 #pragma once
-
+//归并排序
 #include "SortCommon.h"
 
 class MergeSort : public SortBase{
