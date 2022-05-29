@@ -13,9 +13,10 @@ int main(){
     //     MergeSort().DoSort(a);
     //     InsertSort()s.DoSort(a);
     //     BubbleSort().DoSort(a);
-        SelectSort().DoSort(a);
+        // SelectSort().DoSort(a);
         QuickSort().DoSort(a);
         HeapSort().DoSort(a);
+        RadixSort().DoSort(a);
         SortBase::StdSort(a);
     // }
     // FindPeakElementTest test;
