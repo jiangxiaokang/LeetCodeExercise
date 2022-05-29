@@ -61,7 +61,7 @@ protected:
         for(int i = 0 ; i < vec.size() - 2 ; ++i)
         {
             if( vec[i] > vec[i+1]){
-                std::cout<< " sort error "<< "pos = "<< i<<std::endl; 
+                std::cerr<< " sort error "<< "pos = "<< i<<std::endl; 
                 break;
             }
         }

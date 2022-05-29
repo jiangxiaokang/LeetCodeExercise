@@ -9,14 +9,15 @@ std::vector<int> GetRandomVec(int max_num,int count);
 
 int main(){
     // {
-        std::vector<int> a = GetRandomVec(10000,10000);
+        std::vector<int> a = GetRandomVec(1000,10000);
     //     MergeSort().DoSort(a);
     //     InsertSort()s.DoSort(a);
     //     BubbleSort().DoSort(a);
         // SelectSort().DoSort(a);
         QuickSort().DoSort(a);
-        HeapSort().DoSort(a);
-        RadixSort().DoSort(a);
+        QuickSort2().DoSort(a);
+        // HeapSort().DoSort(a);
+        // RadixSort().DoSort(a);
         SortBase::StdSort(a);
     // }
     // FindPeakElementTest test;
