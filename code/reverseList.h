@@ -37,7 +37,7 @@ public:
         ListNode l2(2,&l3);
         ListNode l1(1,&l2);
         PrintList(&l1);
-        ListNode* head = reverseList(&l1);
+        ListNode* head = reverseListRecursive(&l1);
         PrintList(head);
     }
 
@@ -54,5 +54,15 @@ public:
             cur = next;
         } 
         return prev;   
+    }
+    ListNode* reverseListRecursive(ListNode* head){
+        if(!head || !head->next){
+            return head;
+        }
+        //反转head之后的节点
+        ListNode* newHead = reverseListRecursive(head->next);
+        head->next->next = head;
+        head->next = nullptr;//防止环,第一个节点反转后next为空
+        return newHead;
     }
 };
