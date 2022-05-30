@@ -5,6 +5,7 @@
 #include "code/binary_search/findPeakElement.h"
 #include "code/priority_queue.h"
 #include "code/reverseList.h"
+#include "code/reverseDoubleList.h"
 
 std::vector<int> GetRandomVec(int max_num,int count);
 
@@ -26,6 +27,8 @@ int main(){
     // std::cout<<test.findPeakElement(a)<<std::endl;
     //TEST::TestPriorityQueue();
     Solution206().test();
+
+    SolutionDoubleLinkList().test();
     return 0;
 }
 
