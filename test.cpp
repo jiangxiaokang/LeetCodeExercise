@@ -6,6 +6,7 @@
 #include "code/priority_queue.h"
 #include "code/reverseList.h"
 #include "code/reverseDoubleList.h"
+#include "code/isPalindrome.h"
 
 std::vector<int> GetRandomVec(int max_num,int count);
 
@@ -26,9 +27,9 @@ int main(){
     // std::vector<int> a= {1,2,3,4,3};
     // std::cout<<test.findPeakElement(a)<<std::endl;
     //TEST::TestPriorityQueue();
-    Solution206().test();
-
-    SolutionDoubleLinkList().test();
+    //Solution206().test();
+    //SolutionDoubleLinkList().test();
+    SolutionIsPalindrome().test();
     return 0;
 }
 
