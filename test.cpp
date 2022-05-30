@@ -7,6 +7,7 @@
 #include "code/reverseList.h"
 #include "code/reverseDoubleList.h"
 #include "code/isPalindrome.h"
+#include "code/partitionList.h"
 
 std::vector<int> GetRandomVec(int max_num,int count);
 
@@ -29,7 +30,9 @@ int main(){
     //TEST::TestPriorityQueue();
     //Solution206().test();
     //SolutionDoubleLinkList().test();
-    SolutionIsPalindrome().test();
+    //SolutionIsPalindrome().test();
+    SolutionPartitionList().test();
+
     return 0;
 }
 
